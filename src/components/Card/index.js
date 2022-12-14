@@ -1,11 +1,18 @@
-import stylees from './Card.module.scss';
+import React from 'react'
+import styles from './Card.module.scss';
 
 function Card(props) {
     // const onClickPlus = () =>{alert(props.name)}
 
+    const [isAdded, setIsAdded] = React.useState(false)
+    const onPlus = () => {
+        //setIsAdded(true)
+        setIsAdded(!isAdded)
+    }
+
     return (
-        <div className={stylees.cart}>
-            <div className={stylees.like}>
+        <div className={styles.cart}>
+            <div className={styles.like} onClick={props.onClickLike}>
                 <img src="/img/like-unactive.svg" alt="" width={32} height={32}/>
             </div>
             <img src={props.img} alt="" width={133} height={112}/>
@@ -15,7 +22,7 @@ function Card(props) {
                     <span>Цена:</span>
                     <b>{props.price} руб.</b>
                 </div>
-                <button className="btn" onClick={props.onClick}><img src="/img/plus.svg" alt="" width={32} height={32}/></button>
+                <img src={isAdded ? "/img/btn-cheked.svg" : "/img/plus.svg"} alt="" onClick={onPlus} className="cu-p"/>
           </div>
         </div>
         );
