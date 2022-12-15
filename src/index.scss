@@ -33,10 +33,16 @@ header{
   border: 1px solid #F3F3F3;
 border-radius: 10px;
 padding: 12px;
+position: relative;
 img{margin-right: 5px;}
 
 input{
   border: 0;
+}
+.clean{
+  position: absolute;
+  right: 0;
+  height: 18px;
 }
 }
 
@@ -57,6 +63,10 @@ padding: 30px;
 display: flex;
 flex-direction: column;
 .items{
+  overflow: auto;
+  flex: 1;
+}
+.cartEmpty{
   overflow: auto;
   flex: 1;
 }
@@ -87,9 +97,10 @@ overflow: hidden;
     margin: 0 7px;
 
   }
-  .greanBtn{
-    border: 0;
-    width: 100%;
+}
+.greanBtn{
+  border: 0;
+  width: 100%;
 padding-block: 18px;
 background: #9DD558;
 border-radius: 18px;
@@ -100,5 +111,4 @@ line-height: 19px;
 color: #FFFFFF;
 cursor: pointer;
 
-  }
 }
